@@ -1,0 +1,16 @@
+package practice2;
+
+public class PracticeTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/* 1 */
+	//a
+	public static int doubleAvg(double[] arr) {
+		
+	}
+
+}

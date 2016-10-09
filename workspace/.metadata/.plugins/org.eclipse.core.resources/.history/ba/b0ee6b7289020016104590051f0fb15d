@@ -1,0 +1,11 @@
+import api.Combiner;
+
+public class LetterCollector implements Combiner {
+	public String combine(String first, String second) {
+		int[] a = new int[26];
+		int i;
+		for(i = 0; i < second.length(); i++) {
+			
+		}
+	}
+}

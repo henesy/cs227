@@ -1,0 +1,45 @@
+package mini2;
+
+public class FunWithLoops extends java.lang.Object {
+	
+	
+	/**
+	 * Returns the number of iterations required until n is equal to 1, where each iteration updates n in the following way:
+	 * @param n
+	 * iterations
+	 * @return
+	 * number of iterations utilized
+	 */
+	public static int findStoppingTime(int n) {
+		
+	}
+	
+	/**
+	 * Returns a string obtained by alternating characters from two given strings, starting with the first character of the first string.
+	 * @param s
+	 * @param t
+	 * @return
+	 */
+	public static String interleaveWithRuns(String s, String t) {
+		
+	}
+	
+	/**
+	 * Given a string of text containing numbers separated by commas, returns true if the numbers form an arithmetic sequence (a sequence in which each value differs from the previous one by a fixed amount).
+	 * @param text
+	 * @return
+	 */
+	public static boolean isArithmetic(String text) {
+		
+	}
+	
+
+	/**
+	 * Returns the length of the longest consecutive run of the same character in a string s.
+	 * @param s
+	 * @return
+	 */
+	public static int longestRun(String s) {
+		
+	}
+}

@@ -1,0 +1,27 @@
+package practice2;
+import java.util.Scanner;
+
+public class PracticeTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/* 1 */
+	//a
+	public static int doubleAvg(double[] arr) {
+		int avg = 0, i;
+		for(i = 0; i < arr.length; i++) {
+			avg += arr[i];
+		}
+		avg = avg / (i+1);
+		return avg;
+	}
+	
+	//b
+	public static String longestWord(String str) {
+		Scanner scn = new Scanner(str);
+	}
+
+}

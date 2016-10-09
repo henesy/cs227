@@ -1,0 +1,74 @@
+package hw3;
+
+/**
+ * Scoring category for (N-2) of a kind.  A hand
+ * with N dice satisfies this category only if at least N - 2 of
+ * the values are the same.  For a hand that satisfies
+ * this category, the score the sum of all die values;
+ * otherwise the score is zero.
+ */
+public class AllButTwoOfAKind extends Cat
+{
+  /**
+   * Constructs an AllButTwoOfAKind with the given display name
+   * and score.
+   * @param displayName
+   *   name of this category
+   */  
+  public AllButTwoOfAKind(String displayName)
+  {
+    // TODO
+	  name = displayName;
+      filled = false;
+      score = 0;
+  }
+  
+  /**
+   * Determines whether the given hand satisfies the defined
+   * criteria for this scoring category. The criteria are determined
+   * by the concrete type implementing the interface.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   true if the given hand satisfies the defined criteria for the
+   *   category, false otherwise
+   */
+  public boolean isSatisfiedBy(Hand dice) {
+	  boolean s = false;
+	  int[] v = dice.getAll();
+	  int[] cnt = new int[v.length+2];
+	  int i;
+	  for(i = 0; i < v.length; i++) {
+		  cnt[v[i]]++;
+	  }
+	  for(i = 0; i < cnt.length; i++) {
+		  if(cnt[i] == v.length - 2)
+			  s = true;
+	  }
+	  return s;
+  }
+  
+  /**
+   * Returns the potential score that would result from 
+   * using the given hand to fill this category.
+   * Always returns zero if the <code>isSatisfiedBy()</code> 
+   * method returns false for the given hand.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   potential score for the given hand
+   */
+  public int getPotentialScore(Hand dice) {
+	  if(isSatisfiedBy(dice)) {
+		  int i;
+		  int[] vals = dice.getAll();
+		  for(i = 0; i < vals.length; i++) {
+			  score += vals[i];
+		  }
+		  return score;
+	  } else
+		  return 0;
+  }
+}

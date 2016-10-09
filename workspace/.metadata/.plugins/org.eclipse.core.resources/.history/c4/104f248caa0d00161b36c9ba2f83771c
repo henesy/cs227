@@ -1,0 +1,23 @@
+package hw3;
+
+/**
+ * Scoring category for (N-1) of a kind.  A hand
+ * with N dice satisfies this category only if at least N - 1 of
+ * the values are the same.  For a hand that satisfies
+ * this category, the score the sum of all die values;
+ * otherwise the score is zero.
+ */
+public class AllButOneOfAKind extends Cat
+{
+  /**
+   * Constructs an AllButOneOfAKind category with the given display name
+   * and score.
+   * @param displayName
+   *   name of this category
+   */
+  public AllButOneOfAKind(String displayName)
+  {
+    
+  }
+
+}

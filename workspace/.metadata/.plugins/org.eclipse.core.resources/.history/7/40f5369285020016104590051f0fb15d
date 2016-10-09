@@ -1,0 +1,5 @@
+import api.Transformation;
+
+public class CommentRemover implements Transformation {
+
+}

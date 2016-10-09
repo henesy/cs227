@@ -1,0 +1,12 @@
+import api.Transformation;
+
+public class CommentRemover implements Transformation {
+	public String apply(String s) {
+		char lastChar;
+		if(s.length() > 1) {
+			
+		} else {
+			return s;
+		}
+	}
+}

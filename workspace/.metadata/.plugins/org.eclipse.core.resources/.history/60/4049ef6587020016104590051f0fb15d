@@ -1,0 +1,5 @@
+import api.Combiner;
+
+public class LetterCollector implements Combiner {
+
+}

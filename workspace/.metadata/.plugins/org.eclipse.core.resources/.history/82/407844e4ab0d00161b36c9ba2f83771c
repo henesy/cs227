@@ -1,0 +1,58 @@
+package hw3;
+
+/**
+ * Scoring category for (N-1) of a kind.  A hand
+ * with N dice satisfies this category only if at least N - 1 of
+ * the values are the same.  For a hand that satisfies
+ * this category, the score the sum of all die values;
+ * otherwise the score is zero.
+ */
+public class AllButOneOfAKind extends Cat
+{
+  /**
+   * Constructs an AllButOneOfAKind category with the given display name
+   * and score.
+   * @param displayName
+   *   name of this category
+   */
+  public AllButOneOfAKind(String displayName)
+  {
+	name = displayName;
+	filled = false;
+	score = 0;
+  }
+  
+  
+  /**
+   * Determines whether the given hand satisfies the defined
+   * criteria for this scoring category. The criteria are determined
+   * by the concrete type implementing the interface.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   true if the given hand satisfies the defined criteria for the
+   *   category, false otherwise
+   */
+  public boolean isSatisfiedBy(Hand dice) {
+	  return true;
+  }
+  
+  /**
+   * Returns the potential score that would result from 
+   * using the given hand to fill this category.
+   * Always returns zero if the <code>isSatisfiedBy()</code> 
+   * method returns false for the given hand.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   potential score for the given hand
+   */
+  public int getPotentialScore(Hand dice) {
+	  if(isSatisfiedBy(dice)) {
+		  
+	  } else
+		  return 0;
+  }
+}

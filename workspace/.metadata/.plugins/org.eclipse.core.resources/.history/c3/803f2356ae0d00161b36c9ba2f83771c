@@ -1,0 +1,78 @@
+package hw3;
+
+/**
+ * Scoring category for a generalized full house.  A hand
+ * with N dice satisfies this category only in the following cases:
+ * If N is even, there are two different values, each occurring exactly N/2 times.
+ * If N is odd, there are two different values, one of them occurring N/2 times and
+ * the other occurring N/2 + 1 times.  For a hand that satisfies
+ * this category, the score is a fixed value specified in the constructor;
+ * otherwise, the score is zero.
+ */
+public class FullHouse extends Cat 
+{
+  /**
+   * Constructs a FullHouse category with the given display name
+   * and score.
+   * @param displayName
+   *   name of this category
+   * @param points
+   *   points awarded for a hand that satisfies this category
+   */  
+  public FullHouse(String displayName, int points)
+  {
+    // TODO
+	  name = displayName;
+		filled = false;
+		score = points;
+  }
+  
+  /**
+   * Determines whether the given hand satisfies the defined
+   * criteria for this scoring category. The criteria are determined
+   * by the concrete type implementing the interface.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   true if the given hand satisfies the defined criteria for the
+   *   category, false otherwise
+   */
+  public boolean isSatisfiedBy(Hand dice) {
+	  int[] vals = dice.getAll();
+	  int[] cnt = new int[vals.length];
+	  int i;
+	  if(vals.length % 2 == 0) {
+		  //even
+		  for(i = 0; i < vals.length; i++) {
+			  cnt[vals[i]]++;
+		  }
+		  int num = 0;
+		  for(i = 0; i < cnt.length; i++) {
+			  
+		  }
+	  } else {
+		  //odd
+		  
+		  
+	  }
+  }
+  
+  /**
+   * Returns the potential score that would result from 
+   * using the given hand to fill this category.
+   * Always returns zero if the <code>isSatisfiedBy()</code> 
+   * method returns false for the given hand.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   potential score for the given hand
+   */
+  public int getPotentialScore(Hand dice) {
+	  if(isSatisfiedBy(dice)) {
+		  return score;
+	  } else
+		  return 0;
+  }
+}

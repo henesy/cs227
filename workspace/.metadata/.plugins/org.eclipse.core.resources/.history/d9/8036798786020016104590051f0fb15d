@@ -1,0 +1,17 @@
+import api.Transformation;
+
+public class CommentRemover implements Transformation {
+	public String apply(String s) {
+		if(s.length() > 1) {
+			char lastChar = s.charAt(0);
+			int i;
+			for(i = 1; i < s.length(); i++) {
+				if(s.charAt(i) == '/' && lastChar == '/') {
+					
+				}
+			}
+		} else {
+			return s;
+		}
+	}
+}

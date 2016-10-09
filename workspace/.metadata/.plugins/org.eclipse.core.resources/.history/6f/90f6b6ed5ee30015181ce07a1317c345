@@ -1,0 +1,16 @@
+package mini2;
+
+public class FunWithLoops extends java.lang.Object {
+	
+	
+	/**
+	 * Returns the number of iterations required until n is equal to 1, where each iteration updates n in the following way:
+	 * @param n
+	 * iterations
+	 * @return
+	 * number of iterations utilized
+	 */
+	public static int findStoppingTime(int n) {
+		
+	}
+}

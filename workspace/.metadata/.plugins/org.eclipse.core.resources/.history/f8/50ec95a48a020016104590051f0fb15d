@@ -1,0 +1,25 @@
+import api.Combiner;
+
+public class LetterCollector implements Combiner {
+	public String combine(String first, String second) {
+		String s = first;
+		int[] a = new int[26];
+		String fir = first.toLowerCase();
+		String sec = second.toLowerCase();
+		int i;
+		//acquire initial index
+		for(i = 0; i < fir.length(); i++) {
+			a[fir.charAt(i)-97]++;
+		}
+		//scrub over second
+		for(i = 0; i < sec.length(); i++) {
+			char c = sec.charAt(i);
+			if(!a[c-97] > 0) {
+				s += second.charAt(i);
+			}
+		}
+		
+		
+		return s;
+	}
+}

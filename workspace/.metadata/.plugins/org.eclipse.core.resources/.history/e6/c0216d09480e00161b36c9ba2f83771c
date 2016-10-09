@@ -1,0 +1,68 @@
+package hw3;
+
+/**
+ * Scoring category for a "large straight".  A hand
+ * with N dice satisfies this category only if there are
+ * N distinct consecutive values.  For a hand that satisfies
+ * this category, the score is a fixed value specified in the constructor;
+ * otherwise, the score is zero.
+ */
+public class LargeStraight extends Cat
+{
+  /**
+   * Constructs a LargeStraight category with the given display name
+   * and score.
+   * @param displayName
+   *   name of this category
+   * @param points
+   *   points awarded for a hand that satisfies this category
+   */  
+  public LargeStraight(String displayName, int points)
+  {
+	  name = displayName;
+	  filled = false;
+	  score = points;
+  }
+  
+  /**
+   * Determines whether the given hand satisfies the defined
+   * criteria for this scoring category. The criteria are determined
+   * by the concrete type implementing the interface.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   true if the given hand satisfies the defined criteria for the
+   *   category, false otherwise
+   */
+  public boolean isSatisfiedBy(Hand dice) {
+	  int[] vals = dice.getAll();
+	  boolean s = true;
+	  int i;
+	  for(i = 0; i < vals.length; i++) {
+		  if(i - 1 >= 0) {
+			  if(vals[i] -1 != vals[i-1])
+				  s = false;
+		  }
+	  }
+	  return s;
+  }
+  
+  /**
+   * Returns the potential score that would result from 
+   * using the given hand to fill this category.
+   * Always returns zero if the <code>isSatisfiedBy()</code> 
+   * method returns false for the given hand.
+   * This method does not modify the state of this category.
+   * @param dice
+   *   hand to check
+   * @return
+   *   potential score for the given hand
+   */
+  public int getPotentialScore(Hand dice) {
+	  if(isSatisfiedBy(dice))
+		  return score;
+	  else
+		  return 0;
+  }
+}
